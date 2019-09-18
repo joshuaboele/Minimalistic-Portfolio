@@ -1,0 +1,131 @@
+// vars
+
+$blue: #00f;
+$black: #34495e;
+
+$breakpoints: (
+    'sm': 767px,
+    'md': 960px,
+    'lg': 1170px
+) !default;
+
+// mixins
+
+@mixin breakpoint($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+// resets
+
+html {
+    font-size: 10px; // set default size to make calculating to REM easier (i.e: 16px = 1.6rem)
+    font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
+        // default OS font
+            helvetica,
+        'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    color: $black;
+    margin: 0;
+    padding: 0;
+}
+
+h2,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
+// styling
+
+.content {
+    @include breakpoint('lg') {
+        max-width: 640px;
+    }
+    margin: 0 auto;
+
+    &__image {
+        margin-top: 40px;
+        object-fit: cover;
+
+        @include breakpoint('lg') {
+            max-width: 1170px;
+        }
+    }
+}
+
+.introduction {
+    &__title {
+        padding-top: 40px;
+        font-size: 6rem;
+
+        @include breakpoint('md') {
+            padding-top: 100px;
+        }
+    }
+    &__paragraph {
+        font-size: 2.4rem;
+
+        @include breakpoint('md') {
+            max-width: 650px;
+        }
+    }
+    &__list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    &__item {
+        font-size: 2rem;
+    }
+
+    &__emphasize {
+        color: #8e44ad;
+        font-weight: 700;
+    }
+}
+
+.projects {
+    list-style-type: none;
+
+    &__list {
+        list-style-type: none;
+    }
+
+    &__description {
+        display: none;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $black;
+        padding-bottom: 5px;
+    }
+
+    &__item {
+        margin-top: 10px;
+    }
+}
+
+.is-open {
+    display: block;
+}

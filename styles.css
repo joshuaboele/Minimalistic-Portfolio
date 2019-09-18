@@ -1,0 +1,99 @@
+html {
+  font-size: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+  color: #34495e;
+  margin: 0;
+  padding: 0;
+}
+
+h2,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.content {
+  margin: 0 auto;
+}
+@media (min-width: 1170px) {
+  .content {
+    max-width: 640px;
+  }
+}
+.content__image {
+  margin-top: 40px;
+  object-fit: cover;
+}
+@media (min-width: 1170px) {
+  .content__image {
+    max-width: 1170px;
+  }
+}
+
+.introduction__title {
+  padding-top: 40px;
+  font-size: 6rem;
+}
+@media (min-width: 960px) {
+  .introduction__title {
+    padding-top: 100px;
+  }
+}
+.introduction__paragraph {
+  font-size: 2.4rem;
+}
+@media (min-width: 960px) {
+  .introduction__paragraph {
+    max-width: 650px;
+  }
+}
+.introduction__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.introduction__item {
+  font-size: 2rem;
+}
+.introduction__emphasize {
+  color: #8e44ad;
+  font-weight: 700;
+}
+
+.projects {
+  list-style-type: none;
+}
+.projects__list {
+  list-style-type: none;
+}
+.projects__description {
+  display: none;
+}
+.projects__button {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #34495e;
+  padding-bottom: 5px;
+}
+.projects__item {
+  margin-top: 10px;
+}
+
+.is-open {
+  display: block;
+}
+
+/*# sourceMappingURL=styles.css.map */
